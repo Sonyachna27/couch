@@ -1,0 +1,220 @@
+.header{
+	position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+    padding: 25px 0;
+    color: #969696;
+    font-size: 12px;
+    border-bottom: 1px solid transparent;
+    transition: background-color .3s ease-in-out, border-color .3s ease-in-out, box-shadow .3s ease-in-out;
+    background-color: #fff;
+}
+.header__container{
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 15px;
+	@media screen and (min-width:1440px) {
+		justify-content: space-between;
+		gap: 65px;
+	}
+	& .menu {
+		display: flex;
+		align-items: center;
+		margin: 0 auto;
+		@media screen and (max-width: 980px) {
+		  display: none;
+		}
+		& ul {
+		  display: flex;
+		  align-items: center;
+		  gap: 25px;
+		  align-items: center;
+		  
+		  & li {
+			font-weight: 400;
+			color: $--header-color;
+			font-size: 16px;
+			& a{
+				color: inherit;
+			}
+		  }
+		  .sub-menu {
+			display: flex;
+			position: absolute;
+			flex-direction: column;
+			align-items: start;
+			top: calc(100% + 7px);
+			left: 0;
+			width: 240px;
+			visibility: hidden;
+			padding: 25px 20px;
+			text-transform: none;
+			background-color: #fff;
+			transform: translateY(10px);
+			opacity: 0;
+			box-shadow: 0 0 15px rgba(0, 0, 0, .15);
+			transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+			& li{
+				& a:hover{
+					color: $--beige-second;
+				}
+			}
+		  }
+		  & li:has(.sub-menu) {
+			position: relative;
+			transition: .3s linear;
+			&:hover .sub-menu,
+			&:focus-within .sub-menu {
+			  opacity: 1;
+			  visibility: visible;
+			  transform: translateY(0);
+			}
+		  }
+		  & li:not(.sub-menu li) {
+			position: relative;
+			&::before{
+				content: '';
+				position: absolute;
+				bottom: -7px;
+				left: 0;
+				width: 100%;
+				height: 2px;
+				background-color: $--primary;
+				transform: translateY(7px);
+				opacity: 0;
+				transition: .3s ease-in-out;
+			}
+			&:hover{
+				&:before{
+					opacity: 1;
+					transform: translateY(0);
+				}
+			}
+			& > a {
+				font-size: 18px;
+				display: flex;
+				height: auto;
+				width: fit-content;
+				& .sub{
+					margin-top: 0px;
+					font-size: 75%;
+					line-height: 0;
+					position: relative;
+					display: block;
+				}
+			}
+		  }
+		}
+	  }
+	  
+}
+
+.header__info{
+	display: flex;
+	align-items: center;
+	margin-left: auto;
+	gap: 20px;
+	@media screen and (min-width:1200px) {
+		margin: 0;
+		gap: 30px;
+	}
+}
+.header__lang{
+font-size: 18px;
+line-height: 1.5;
+}
+.header__call{
+	display: flex;
+	gap: 30px;
+	@media screen and (max-width:1200px) {
+		flex-direction: column-reverse;
+		gap: 5px;
+	}
+}
+.call{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	& span{
+		@media screen and (max-width:767px) {
+			display: none;
+			}
+	}
+	& svg{
+		@media screen and (min-width:767px) {
+			display: none;
+			}
+	}
+}
+.header__popup{
+display: none;
+	@media screen and (min-width:768px) {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: transparent;
+		border: none;
+		outline: none;
+		text-transform: uppercase;
+		color: $--primary;
+		font-weight: 700;
+	}
+}
+.burgerBtn {
+    display: none;
+
+    @media screen and (max-width: 1023px) {
+      display: block;
+      width: 50px;
+      height: 50px;
+      border: 0.5px solid $--white;
+      background-color: $--white;
+      cursor: pointer;
+      position: relative;
+      right: 0;
+      top: calc(50% - 22.5px);
+      border-radius: 50%;
+
+      .btn-menu-line {
+        width: 28px;
+        height: 2px;
+        position: absolute;
+        left: 10px;
+        background-color: $--primary;
+        transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.5s;
+      }
+
+      .btn-menu-line1 {
+        bottom: 8px;
+		transition: bottom .1s ease-out,top .1s ease-out,transform .1s ease-out .1s
+      }
+      .btn-menu-line2 {
+        top: 10px;
+      }
+
+      .btn-menu-line3 {
+        bottom: 8px;
+		transition: bottom .1s ease-out,top .1s ease-out,transform .1s ease-out .1s;
+      }
+
+      .open & {
+        .btn-menu-line1 {
+			top: 21px;
+			transform: rotate(-45deg);
+			
+        }
+
+        .btn-menu-line2 {
+          opacity: 0;
+        }
+
+        .btn-menu-line3 {
+			bottom: 24px;
+			transform: rotate(45deg);
+        }
+      }
+    }
+  }

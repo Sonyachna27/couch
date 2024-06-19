@@ -1,0 +1,143 @@
+@font-face {
+  font-family: "Open Sans";
+  src: url(../fonts/OpenSans-Light.ttf);
+  font-weight: 300;
+}
+@font-face {
+  font-family: "Open Sans";
+  src: url(../fonts/OpenSans-Regular.ttf);
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Open Sans";
+  src: url(../fonts/OpenSans-Medium.ttf);
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url(../fonts/OpenSans-Bold.ttf);
+  font-weight: 700;
+}
+
+$--primary: #b79c7a;
+$--beige-second:#a58359; 
+$--hover-color: #c3893f;; 
+$--white: #fff;
+$--black: #373737;
+$--light-gray: #f5f5f5;
+$--header-color:#585858;
+$--transition: .4s ease-in-out;
+body {
+  font-family: "Open Sans";
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.5;
+  color: $--black;
+  background: $--white;
+ 
+}
+
+// main {
+//   @media screen and (max-width: 1023px) {
+//     margin-top: 77px;
+//   }
+// }
+
+.container {
+  max-width: 1300px;
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  z-index: 1;
+}
+
+.container--small {
+	max-width: 1060px;
+	width: 100%;
+	padding-left: 15px;
+	padding-right: 15px;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	z-index: 1;
+}
+h1 {
+  @include titleH1-regular;
+}
+h2 {
+  @include titleH2;
+}
+.beige{
+	font-size: 18px;
+	color: $--primary;
+	font-weight: 300;
+	text-transform: uppercase;
+}
+
+.btn {
+	display: inline-block;
+    border: 0;
+    font-weight: 500;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    padding: 6px 20px;
+    font-size: 16px;
+    line-height: 1.5;
+    box-shadow: none;
+    transition: .2s ease-in-out;
+
+  &:hover {
+	background-color: $--hover-color;
+  }
+}
+// 
+
+.breadcrumbs {
+  padding: 5px 0;
+  margin-bottom: 10px;
+  &__wrap {
+    display: flex;
+    align-items: center;
+	justify-content: flex-start;
+    gap: 5px;
+    flex-wrap: wrap;
+	font-weight: 300;
+  }
+  & a {
+    cursor: pointer;
+    color: #494949;
+	text-transform: uppercase;
+
+  }
+}
+
+.row{
+	display: flex;
+	align-items: center;
+	align-items: center;
+    justify-content: center;
+}
+.animation-row_description{
+	max-width: 555px;
+    margin-left: 68px;
+    font-weight: 300;
+    padding-right: 100px;
+    line-height: 1.41;
+    padding-left: 15px;
+}
+.animation-row_image{
+	max-width: 700px;
+    width: 100%;
+    background-size: cover;
+    background-position: 50%;
+}
