@@ -489,6 +489,7 @@ h2 {
 .footer__top {
   padding: 65px 0 45px;
   display: flex;
+  justify-content: space-between;
 }
 @media screen and (max-width: 1200px) {
   .footer__top {
@@ -498,8 +499,7 @@ h2 {
 }
 
 .footer__menu {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
   gap: 30px;
   flex-grow: 0;
   flex-shrink: 0;
@@ -508,7 +508,7 @@ h2 {
 }
 @media screen and (min-width: 1200px) {
   .footer__menu {
-    max-width: 80%;
+    max-width: 87%;
   }
 }
 @media screen and (max-width: 1023px) {
@@ -526,8 +526,8 @@ h2 {
   transition: color 0.4s ease-in-out;
 }
 .footer__menu .sub-menu {
-  display: grid;
-  grid-template-columns: repeat(2, 50%);
+  display: flex;
+  flex-direction: column;
   gap: 15px 30px;
   max-width: -moz-fit-content;
   max-width: fit-content;

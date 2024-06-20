@@ -6,21 +6,21 @@
 .footer__top{
 	padding: 65px 0 45px;
 	display: flex;
+	justify-content: space-between;
 	@media screen and (max-width:1200px) {
 		flex-wrap: wrap;
 		gap: 20px;
 	}
 }
 .footer__menu{
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
+	display:flex;
 	gap: 30px;
 	flex-grow: 0;
 	flex-shrink: 0;
 	max-width: 100%;
 	width: 100%;
 	@media screen and (min-width:1200px) {
-		max-width: 80%;
+		max-width: 87%;
 	}
 	@media screen and (max-width:1023px) {
 		display: flex;
@@ -35,8 +35,8 @@
 	}
 	
 	& .sub-menu{
-		display: grid;
-		grid-template-columns: repeat(2, 50%);
+		display:flex;
+		flex-direction: column;
 		gap: 15px 30px;
 		max-width: fit-content;
 		@media screen and (max-width:640px) {
