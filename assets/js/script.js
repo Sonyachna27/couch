@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		readMoreButton.addEventListener("click", function(e) {
 			e.preventDefault();
 			manufactureContainer.forEach(function(content) {
-				if (readMoreButton.innerText === 'згорнути текст') {
+				if (readMoreButton.innerText === 'Згорнути текст') {
 					content.style.height = "228px";
 					readMoreButton.innerText = 'Розгорнути текст';
 				} else {
