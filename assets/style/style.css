@@ -284,13 +284,14 @@ h2 {
 .header__container .menu ul {
   display: flex;
   align-items: center;
-  gap: 25px;
+  gap: 40px;
 }
 @media screen and (max-width: 980px) {
   .header__container .menu ul {
     flex-direction: column;
     height: 100%;
     align-items: flex-start;
+    gap: 25px;
   }
 }
 .header__container .menu ul li {
@@ -693,6 +694,7 @@ h2 {
   width: 100%;
   display: block;
   height: auto;
+  aspect-ratio: 1/0.5;
 }
 
 .mouse {
@@ -1040,10 +1042,31 @@ section .container {
   display: flex;
   background: #ebebeb;
 }
+@media screen and (max-width: 767px) {
+  .owl-slide {
+    flex-direction: column;
+  }
+}
 
 .owl-slide img {
   flex: 0 0 58%;
   max-width: 58%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 100% 100%;
+     object-position: 100% 100%;
+}
+@media screen and (max-width: 1023px) {
+  .owl-slide img {
+    -o-object-position: 50% 50%;
+       object-position: 50% 50%;
+  }
+}
+@media screen and (max-width: 767px) {
+  .owl-slide img {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
 }
 
 .owl-slide-content {
@@ -1053,8 +1076,19 @@ section .container {
   color: #767676;
   flex: 0 0 41%;
   max-width: 41%;
-  padding: 60px;
+  padding: 30px;
   justify-content: center;
+}
+@media screen and (min-width: 1024px) {
+  .owl-slide-content {
+    padding: 60px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .owl-slide-content {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
 }
 .owl-slide-content h2 {
   line-height: 1.1;
