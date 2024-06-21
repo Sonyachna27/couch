@@ -36,4 +36,40 @@ document.addEventListener("DOMContentLoaded", function () {
 		});
 	});
 	
+	const carouselSliderInit = document.querySelector('.carousel')
+	if(carouselSliderInit){
+		const carouselSlider = new Swiper(".carousel", {
+			slidesPerView: 1,
+			spaceBetween: 10,
+			watchOverflow: true,
+			loop: true,
+			speed: 3000,
+			breakpoints: {
+				550: {
+				slidesPerView: 2,
+				spaceBetween: 10,
+				},
+				1024: {
+				slidesPerView: 3,
+				spaceBetween: 10,
+				},
+				
+			},
+			navigation: {
+			  nextEl: ".carousel-button-next",
+			  prevEl: ".carousel-button-prev",
+			},
+		  });
+	}
+	const owlSliderInit = document.querySelector('.owl-slider')
+	if(owlSliderInit){
+		const carouselSlider = new Swiper(".owl-slider", {
+			slidesPerView: 1,
+			spaceBetween: 10,
+			watchOverflow: true,
+			loop: true,
+			speed: 1000,
+		  });
+	}
+
 });

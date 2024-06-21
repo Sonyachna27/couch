@@ -129,9 +129,7 @@ h2 {
 }
 .animation-row_description{
 	max-width: 555px;
-    margin-left: 68px;
     font-weight: 300;
-    padding-right: 100px;
     line-height: 1.41;
     padding-left: 15px;
 }
@@ -140,4 +138,24 @@ h2 {
     width: 100%;
     background-size: cover;
     background-position: 50%;
+}
+.arrow-after{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 5px;
+	color: $--primary;
+	transition: .3s ease-in-out;
+	&:hover{
+		color: $--hover-color;
+	}
+	&:after{
+		content: '';
+		width: 20px;
+		height: 15px;
+		background: url(../images/arrow-right.svg) center center / cover no-repeat;
+	}
+}
+.mb-m{
+	margin-bottom: 60px;
 }
