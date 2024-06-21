@@ -1123,6 +1123,7 @@ section .container {
 .manufacture__container {
   overflow: auto;
   z-index: 0;
+  transition: 0.3s ease;
 }
 .manufacture__container h2 {
   margin: 25px 0 10px;
@@ -1194,6 +1195,49 @@ section .container {
   max-width: 100%;
   width: 100%;
   height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.partners__container {
+  gap: 40px;
+}
+@media screen and (max-width: 1023px) {
+  .partners__container {
+    flex-direction: column;
+  }
+}
+
+.partners__descr {
+  flex: 0 0 24%;
+}
+.partners__descr h2 {
+  margin-bottom: 40px;
+}
+.partners__descr p {
+  margin-bottom: 20px;
+}
+
+.partners__images {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 60px;
+}
+@media screen and (max-width: 1023px) {
+  .partners__images {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 550px) {
+  .partners__images {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.partners__images img {
+  max-width: 100%;
+  width: 100%;
+  max-height: 60px;
   -o-object-fit: cover;
      object-fit: cover;
 }/*# sourceMappingURL=style.css.map */
