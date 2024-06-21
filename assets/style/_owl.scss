@@ -7,10 +7,22 @@
 .owl-slide{
 	display: flex;
 	background: #ebebeb;
+	@media screen and (max-width:767px) {
+		flex-direction: column;
+	}
 }
 .owl-slide img{
 	flex: 0 0 58%;
 	max-width: 58%;
+	object-fit: cover;
+	object-position: 100% 100%;
+	@media screen and (max-width:1023px) {
+		object-position: 50% 50%;
+	}
+	@media screen and (max-width:767px) {
+		flex: 0 0 100%;
+		max-width: 100%;
+	}
 }
 .owl-slide-content{
 display: flex;
@@ -19,8 +31,15 @@ gap: 20px;
 color: $--title-color;
 flex: 0 0 41%;
 max-width: 41%;
-padding: 60px;
+padding: 30px;
 justify-content: center;
+@media screen and (min-width:1024px) {
+	padding: 60px;
+}
+@media screen and (max-width:767px) {
+	flex: 0 0 100%;
+	max-width: 100%;
+}
 & h2{
 	line-height: 1.1;
 }

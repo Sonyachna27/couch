@@ -49,11 +49,12 @@
 		& ul {
 		  display: flex;
 		  align-items: center;
-		  gap: 25px;
+		  gap: 40px;
 		  @media screen and (max-width:980px) {
 			flex-direction: column;
 			height: 100%;
 			align-items: flex-start;
+			gap: 25px;
 		  }
 		  & li {
 			font-weight: 400;
