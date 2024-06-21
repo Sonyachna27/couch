@@ -1,0 +1,40 @@
+.manufacture{
+	background-color: $--white;
+}
+.manufacture-wrap{
+	height: auto;
+}
+.manufacture__container{
+	overflow: auto;
+	z-index: 0;
+	& h2{
+		margin: 25px 0 10px;
+    	font-size: 24px;
+	}
+	& p{
+		margin-bottom: 20px;
+		&:has(+ ul){
+			margin-bottom: 0;
+		}
+	}
+	& ul{
+		display: flex;
+		flex-direction: column;
+		gap: 5px;
+		list-style-type: disc;
+		list-style-position: inside;
+		margin-bottom: 20px;
+		margin-left: 20px;
+	}
+}
+.manufacture-btn{
+	background: none;
+	color: black;
+    margin: 20px 0;
+    font-weight: 700;
+	outline: none;
+	width: 100%;
+	text-align: left;
+	position: relative;
+	z-index: 1;
+}
