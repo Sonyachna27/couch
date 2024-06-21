@@ -1,5 +1,5 @@
 .header{
-	position: relative;
+	position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -7,6 +7,7 @@
     padding: 25px 0;
     color: #969696;
     font-size: 12px;
+	height: auto;
     border-bottom: 1px solid transparent;
     transition: background-color .3s ease-in-out, border-color .3s ease-in-out, box-shadow .3s ease-in-out;
     background-color: #fff;

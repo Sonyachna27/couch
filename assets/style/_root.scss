@@ -39,11 +39,12 @@ body {
  
 }
 
-// main {
-//   @media screen and (max-width: 1023px) {
-//     margin-top: 77px;
-//   }
-// }
+main {
+    margin-top: 95px;
+  @media screen and (max-width:367px) {
+	margin-top: 110px;
+  }
+}
 
 .container {
   max-width: 1450px;
@@ -167,5 +168,23 @@ h2 {
 	@media screen and (max-width:767px) {
 		flex-direction: column;
 		align-items: flex-start;
+	}
+}
+.breadcrumbs__container{
+	display: flex;
+	align-items: center;
+	justify-content: start;
+	gap: 5px;
+	flex-wrap: nowrap;
+	& a:nth-child(1){
+		text-transform: uppercase;
+
+	}
+	& a{
+		color: $--title-color;
+	}
+	& span{
+		color: $--black;
+		font-weight: 500;
 	}
 }
