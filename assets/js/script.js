@@ -72,4 +72,56 @@ document.addEventListener("DOMContentLoaded", function () {
 		  });
 	}
 
+	const manufactureContainer = document.querySelectorAll(".manufacture__container");
+
+	if (manufactureContainer) {
+		const readMoreButton = document.getElementById("readMore");
+	
+		manufactureContainer.forEach(function(content) {
+			if (content.offsetHeight >= 240) {
+				content.style.height = "228px";
+				content.style.overflow = 'hidden';
+			}
+		});
+	
+		readMoreButton.addEventListener("click", function(e) {
+			e.preventDefault();
+			manufactureContainer.forEach(function(content) {
+				if (readMoreButton.innerText === 'згорнути текст') {
+					content.style.height = "228px";
+					readMoreButton.innerText = 'Розгорнути текст';
+				} else {
+					content.style.height = "auto";
+					readMoreButton.innerText = 'Згорнути текст';
+				}
+			});
+		});
+	}
+	
+	const newsSliderInit = document.querySelector('.newsSlider')
+	if(newsSliderInit){
+		const newsSlider = new Swiper(".newsSlider", {
+			slidesPerView: 1,
+			spaceBetween: 10,
+			watchOverflow: true,
+			loop: true,
+			speed: 1000,
+			breakpoints: {
+				550: {
+				slidesPerView: 2,
+				spaceBetween: 10,
+				},
+				1024: {
+				slidesPerView: 3,
+				spaceBetween: 10,
+				},
+				
+			},
+
+		  });
+	} 
+      
+        
+
+
 });
