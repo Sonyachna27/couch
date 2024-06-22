@@ -106,11 +106,11 @@
 			transition: .3s linear;
 			@media screen and (min-width:981px) {
 				&:hover .sub-menu,
-			&:focus-within .sub-menu {
-			  opacity: 1;
-			  visibility: visible;
-			  transform: translateY(0);
-			}
+				&:focus-within .sub-menu {
+				opacity: 1;
+				visibility: visible;
+				transform: translateY(0);
+				}
 			}
 
 		  }
