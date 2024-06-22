@@ -84,18 +84,20 @@ document.addEventListener("DOMContentLoaded", function () {
 			}
 		});
 	
-		readMoreButton.addEventListener("click", function(e) {
-			e.preventDefault();
-			manufactureContainer.forEach(function(content) {
-				if (readMoreButton.innerText === 'Згорнути текст') {
-					content.style.height = "228px";
-					readMoreButton.innerText = 'Розгорнути текст';
-				} else {
-					content.style.height = "auto";
-					readMoreButton.innerText = 'Згорнути текст';
-				}
+		if(readMoreButton){
+			readMoreButton.addEventListener("click", function(e) {
+				e.preventDefault();
+				manufactureContainer.forEach(function(content) {
+					if (readMoreButton.innerText === 'Згорнути текст') {
+						content.style.height = "228px";
+						readMoreButton.innerText = 'Розгорнути текст';
+					} else {
+						content.style.height = "auto";
+						readMoreButton.innerText = 'Згорнути текст';
+					}
+				});
 			});
-		});
+		}
 	}
 	
 	const newsSliderInit = document.querySelector('.newsSlider')
@@ -120,8 +122,62 @@ document.addEventListener("DOMContentLoaded", function () {
 
 		  });
 	} 
-      
-        
+    
+	
+	const select = document.querySelectorAll('.nice-select');
+	
+	select.forEach((sel)=>{
+		const current = sel.querySelector('.current');
+    	const options = sel.querySelectorAll('.option');
+		sel.addEventListener('click', () =>{
+			sel.classList.toggle('open');
+			options.forEach(option => {
+				option.addEventListener('click', function () {
+					current.textContent = this.textContent;
+					options.forEach(opt => opt.classList.remove('selected'));
+					this.classList.add('selected');
+				});
+			});	
+		})
+	})
+    
+ 
+		const showContentGridBtn = document.getElementById('view-tile');
+		const showContentColumnBtn = document.getElementById('view-list');
+		const productsWrap = document.querySelector('.products');
 
+		const setView = (view) => {
+		  if (view === 'grid') {
+			productsWrap.classList.remove('flex-marking');
+			productsWrap.classList.add('grid-marking');
+			showContentGridBtn.classList.add('view-btn-active');
+			showContentColumnBtn.classList.remove('view-btn-active');
+			localStorage.setItem('productsView', 'grid');
+		  } else if (view === 'list') {
+			productsWrap.classList.remove('grid-marking');
+			productsWrap.classList.add('flex-marking');
+			showContentColumnBtn.classList.add('view-btn-active');
+			showContentGridBtn.classList.remove('view-btn-active');
+			localStorage.setItem('productsView', 'list');
+		  }
+		};
+	  
+		showContentGridBtn.addEventListener('click', () => {
+		  setView('grid');
+		});
+	  
+		showContentColumnBtn.addEventListener('click', () => {
+		  setView('list');
+		});
+	  
+		const savedView = localStorage.getItem('productsView');
+		if (savedView) {
+		  setView(savedView);
+		} else {
+		  setView('grid');
+		}
+
+		
+	  
 
 });
