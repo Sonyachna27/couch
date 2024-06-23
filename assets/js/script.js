@@ -38,28 +38,34 @@ document.addEventListener("DOMContentLoaded", function () {
 	
 	const carouselSliderInit = document.querySelector('.carousel')
 	if(carouselSliderInit){
-		const carouselSlider = new Swiper(".carousel", {
-			slidesPerView: 1,
-			spaceBetween: 10,
-			watchOverflow: true,
-			loop: true,
-			speed: 3000,
-			breakpoints: {
-				550: {
-				slidesPerView: 2,
-				spaceBetween: 10,
-				},
-				1024: {
-				slidesPerView: 3,
-				spaceBetween: 10,
-				},
-				
-			},
-			navigation: {
-			  nextEl: ".carousel-button-next",
-			  prevEl: ".carousel-button-prev",
-			},
-		  });
+		const carouselSlides = document.querySelectorAll(".carousel-slide");
+   
+
+    if (carouselSlides.length > 1) {
+        carouselSliderInit.classList.add('show-arrows');
+    }
+
+    const carouselSlider = new Swiper(".carousel", {
+        slidesPerView: 1,
+        spaceBetween: 10,
+        watchOverflow: true,
+        loop: true,
+        speed: 1000,
+        breakpoints: {
+            550: {
+                slidesPerView: 2,
+                spaceBetween: 10,
+            },
+            1024: {
+                slidesPerView: 3,
+                spaceBetween: 10,
+            },
+        },
+        navigation: {
+            nextEl: ".carousel-button-next",
+            prevEl: ".carousel-button-prev",
+        },
+    });
 	}
 	const owlSliderInit = document.querySelector('.owl-slider')
 	if(owlSliderInit){
@@ -123,7 +129,6 @@ document.addEventListener("DOMContentLoaded", function () {
 		  });
 	} 
     
-	
 	const select = document.querySelectorAll('.nice-select');
 	
 	select.forEach((sel)=>{
@@ -146,38 +151,199 @@ document.addEventListener("DOMContentLoaded", function () {
 		const showContentColumnBtn = document.getElementById('view-list');
 		const productsWrap = document.querySelector('.products');
 
+	if(showContentColumnBtn && showContentGridBtn){
 		const setView = (view) => {
-		  if (view === 'grid') {
-			productsWrap.classList.remove('flex-marking');
-			productsWrap.classList.add('grid-marking');
-			showContentGridBtn.classList.add('view-btn-active');
-			showContentColumnBtn.classList.remove('view-btn-active');
-			localStorage.setItem('productsView', 'grid');
-		  } else if (view === 'list') {
-			productsWrap.classList.remove('grid-marking');
-			productsWrap.classList.add('flex-marking');
-			showContentColumnBtn.classList.add('view-btn-active');
-			showContentGridBtn.classList.remove('view-btn-active');
-			localStorage.setItem('productsView', 'list');
+			if (view === 'grid') {
+			  productsWrap.classList.remove('flex-marking');
+			  productsWrap.classList.add('grid-marking');
+			  showContentGridBtn.classList.add('view-btn-active');
+			  showContentColumnBtn.classList.remove('view-btn-active');
+			  localStorage.setItem('productsView', 'grid');
+			} else if (view === 'list') {
+			  productsWrap.classList.remove('grid-marking');
+			  productsWrap.classList.add('flex-marking');
+			  showContentColumnBtn.classList.add('view-btn-active');
+			  showContentGridBtn.classList.remove('view-btn-active');
+			  localStorage.setItem('productsView', 'list');
+			}
+		  };	  
+		  showContentGridBtn.addEventListener('click', () => {
+			setView('grid');
+		  });	  
+		  showContentColumnBtn.addEventListener('click', () => {
+			setView('list');
+		  });	  
+		  const savedView = localStorage.getItem('productsView');
+		  if (savedView) {
+			setView(savedView);
+		  } else {
+			setView('grid');
 		  }
-		};
-	  
-		showContentGridBtn.addEventListener('click', () => {
-		  setView('grid');
-		});
-	  
-		showContentColumnBtn.addEventListener('click', () => {
-		  setView('list');
-		});
-	  
-		const savedView = localStorage.getItem('productsView');
-		if (savedView) {
-		  setView(savedView);
-		} else {
-		  setView('grid');
+	}
+
+
+		const productSliderInit = document.querySelector('.productSlider')
+		if(productSliderInit){
+			const productSlides = document.querySelectorAll('.product-slide');
+			productSlides.forEach(slide => {
+				const productImagesSlider = slide.querySelectorAll('img');
+		
+				if (productImagesSlider.length === 2) {
+					productImagesSlider.forEach(img => img.classList.add('half-height'));
+				}
+			});
+			const productSlider = new Swiper(".productSlider", {
+				slidesPerView: 1,
+				spaceBetween: 5,
+				watchOverflow: true,
+				loop: true,
+				speed: 1000,
+				autoplay: {
+					delay: 0,
+					disableOnInteraction: false,
+				  },
+				  speed: 3000,
+				breakpoints: {
+					550: {
+					slidesPerView: 2,
+					spaceBetween: 5,
+					},
+					1024: {
+					slidesPerView: 4,
+					spaceBetween: 5,
+					},
+					
+				},
+				pagination: {
+					el: ".product-pagination",
+				},
+	
+			  });
+		} 
+		
+		const techPage = document.querySelector('.tech__container-tabs');
+		if (techPage) {
+			const techTabs = document.querySelectorAll('.tech__container-tabs-btn');
+			const techContentBlock = document.querySelectorAll('.tech__container-tabs-content');
+	
+			function showTechContent(contentName) {
+				techContentBlock.forEach((content) => {
+					let contentDataName = content.dataset.name;
+					if (contentDataName === contentName) {
+						content.style.display = "block";
+					} else {
+						content.style.display = "none";
+					}
+				});
+			}
+	
+			function activeTechTabs() {
+				techTabs.forEach((tab, index) => {
+					let contentDataName = tab.dataset.name;
+	
+					tab.addEventListener('click', () => {
+						techTabs.forEach((t) => t.classList.remove('active-tab'));
+						tab.classList.add('active-tab');
+						showTechContent(contentDataName);
+					});
+	
+					// Set the first tab as active and show its content by default
+					if (index === 0) {
+						tab.classList.add('active-tab');
+						showTechContent(contentDataName);
+					}
+				});
+			}
+	
+			activeTechTabs();
 		}
 
+		const interSliderInit = document.querySelector('.interSlider')
+		if(interSliderInit){
+			const slides = document.querySelectorAll('.inter-slide');
+			slides.forEach(slide => {
+				const imagesSlider = slide.querySelectorAll('img');
 		
-	  
+				if (imagesSlider.length === 2) {
+					imagesSlider.forEach(img => img.classList.add('half-height'));
+				}
+			});
+			const interSlider = new Swiper(".interSlider", {
+				slidesPerView: 1,
+				spaceBetween: 5,
+				watchOverflow: true,
+				loop: true,
+				speed: 3000,
+				autoplay: {
+					delay: 0,
+					disableOnInteraction: false,
+				  },
+				  speed: 3000,
+				breakpoints: {
+					550: {
+					slidesPerView: 2,
+					spaceBetween: 5,
+					},
+					1024: {
+					slidesPerView: 4,
+					spaceBetween: 5,
+					},
+					
+				},
+				pagination: {
+					el: ".inter-pagination",
+				},
+			  });
+		} 
+		const detailsAnimInfo = document.querySelectorAll('.details__info-wrap');
+		if(detailsAnimInfo){
+			const interval = 3000; 
+			let currentIndex = 0;
 
+			function detailsAnimateBlocks() {
+				detailsAnimInfo.forEach((wrap, index) => {
+				if (index === currentIndex) {
+					wrap.classList.add('active');
+				} else {
+					wrap.classList.remove('active');
+				}
+				});
+				currentIndex = (currentIndex + 1) % detailsAnimInfo.length;
+				}
+				detailsAnimateBlocks();
+			setInterval(detailsAnimateBlocks, interval);
+		}
+
+		const intresSliderInit = document.querySelector('.intresSlider')
+		if(intresSliderInit){
+			const intresSlide = document.querySelectorAll(".intres-slide");
+			if (intresSlide.length > 1) {
+				intresSliderInit.classList.add('show-arrows');
+			}
+			const intresSlider = new Swiper(".intresSlider", {
+				slidesPerView: 1,
+				spaceBetween: 5,
+				watchOverflow: true,
+				loop: true,
+				speed: 1000,
+				breakpoints: {
+					550: {
+					slidesPerView: 2,
+					spaceBetween: 5,
+					},
+					1024: {
+					slidesPerView: 3,
+					spaceBetween: 20,
+					},
+					
+				},
+				pagination: {
+					el: ".intres-pagination",
+				},
+				navigation: {
+					nextEl: ".intres-button-next",
+					prevEl: ".intres-button-prev",
+				},
+			  });
+		} 
 });

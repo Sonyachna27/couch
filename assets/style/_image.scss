@@ -64,7 +64,6 @@
 	}
 }
 .carousel-btn{
-	display: block;
 	position: absolute;
 	top: calc(50% - 40px);
 	z-index: 2;
@@ -88,4 +87,11 @@
 }
 .art-price{
 	color: $--primary;
+}
+.carousel .carousel-btn {
+    display: none;
+}
+
+.carousel.show-arrows .carousel-btn{
+    display: block;
 }
