@@ -1,0 +1,32 @@
+.productSlider{
+	padding-bottom: 20px;
+}
+
+.product-slide{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 5px;
+	height: auto;
+	max-height: 445px;
+	
+	& img{
+		max-width: 100%;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		max-height: 445px;
+	}
+}
+img.half-height {
+    max-height: 100%;
+	height: calc((100% / 2) - 5px);
+	object-position: 100% 15%;
+}
+.product-pagination.swiper-pagination{
+	bottom: -6px;
+}
+.product-pagination .swiper-pagination-bullet{
+	background-color: $--black;
+}
