@@ -131,6 +131,12 @@ h2 {
 	align-items: center;
     justify-content: center;
 }
+.row-reverse{
+	display: flex;
+	align-items: center;
+    justify-content: center;
+	flex-direction: row-reverse;
+}
 .animation-row_description{
 	max-width: 555px;
     font-weight: 300;
@@ -190,4 +196,34 @@ h2 {
 		color: $--black;
 		font-weight: 500;
 	}
+}
+.mouse{
+	position: absolute;
+	bottom: -46px;
+	left: 50%;
+	max-width: 16px;
+    display: flex;
+	flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: fit-content;
+	z-index: 2;
+	& svg{
+		max-width: inherit;
+	}
+	&:after{
+		content: '';
+		width: 16px;
+		height: 10px;
+		background: url(../images/arrow-short-down.svg) center center / contain no-repeat;
+	}
+}
+.quotes{
+	background-image: url(../images/quotes.png);
+    width: 37px;
+    height: 37px;
+    background-size: contain;
+    background-position: 50%;
+    margin-bottom: 23px;
 }

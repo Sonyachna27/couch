@@ -1,5 +1,8 @@
 .about{
 	padding: 150px 0;
+	& .about-inro{
+		padding: 60px 0;
+	}
 	@media screen and (max-width:767px) {
 		padding: 75px 0;
 	}
@@ -16,6 +19,7 @@
 	gap: 60px;
 	justify-content: space-between;
 	position: relative;
+	padding-top: 50px;
 	@media screen and (max-width:767px){
 		flex-direction: column;
 		gap: 30px;
@@ -26,7 +30,8 @@
     top: 5%;
     left: 0;
     width: 40%;
-    height: 110%;
+    min-height: 371px;
+	height: 100%;
     z-index: -1;
 		background: url(../images/Mask-Group.png) center center / cover no-repeat;
 		@media screen and (max-width:767px){
