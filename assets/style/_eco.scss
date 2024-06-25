@@ -1,0 +1,40 @@
+.eco__wrap{
+	gap: 20px;
+	@media screen and (max-width:1200px) {
+		flex-direction: column;
+	}
+}
+.eco__content{
+	max-width: 450px;
+	width: 100%;
+	color: $--title-color;
+	flex: 1 1 50%;
+}
+.eco__images{
+	max-width: 715px;
+	width: 100%;
+	display: grid;
+	grid-template-columns: 390px 320px;
+    grid-template-rows: 205px 205px;
+    grid-column-gap: 8px;
+    grid-row-gap: 8px;
+	flex: 1 1 50%;
+	@media screen and (max-width:767px) {
+		display: flex;
+		flex-direction: column;
+	}
+	& img{
+		height: 100%;
+		width: 100%;
+		object-fit: cover;
+		&:nth-of-type(2){
+			grid-area: span 2;
+			height: 100%;
+			object-fit: cover;
+			object-position: 50% 50%;
+		}
+		@media screen and (max-width:767px) {
+			aspect-ratio: 1;
+		}
+	}
+}

@@ -26,6 +26,11 @@
 	@media screen and (max-width:767px) {
 		aspect-ratio: 1 / .75;
 	}
+	& img{
+		object-fit: cover;
+		 max-width: 110%;
+    	width: 120%;
+	}
 }
 .image__text-row.row-reverse{
 	@media screen and (max-width:767px) {
