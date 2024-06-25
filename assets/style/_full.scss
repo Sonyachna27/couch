@@ -1,0 +1,16 @@
+.full{
+	min-height: 70vh;
+	background: url('../images/about-img-full.jpg') 50% 50% / cover no-repeat;
+}
+.full__container{
+	height: auto;
+	display: flex;
+	align-items: start;
+	justify-content: center;
+	gap: 15px;
+	flex-direction: column;
+	padding-top: 26vh;
+	& h2{
+		@include titleH1-big;
+	}
+}
