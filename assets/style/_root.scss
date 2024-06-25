@@ -125,6 +125,19 @@ h2 {
 
   }
 }
+.video-btn{
+	background: transparent;
+	outline: none;
+	color: $--primary;
+	font-size: 16px;
+	display: flex;
+	gap: 10px;
+	align-items: center;
+	& svg{
+		max-width: 38px;
+		max-height: 38px;
+	}
+}
 
 .row{
 	display: flex;

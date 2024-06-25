@@ -1,6 +1,11 @@
 .our{
 	margin-bottom: 40px;
 }
+.our__container{
+	@media screen and (max-width:1023px) {
+		flex-direction: column;
+	}
+}
 .our-slider{
 	position: relative;
 	

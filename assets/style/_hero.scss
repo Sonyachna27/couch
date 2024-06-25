@@ -1,5 +1,6 @@
 .hero__container{
 	position: relative;
+	padding-top: 20px;
 	.heading &{
 		height: 70dvh;
 		padding: 60px 0 100px 0;
@@ -8,7 +9,7 @@
 }
 .hero__content{
 	position: absolute;
-	top: calc(50% - 20px);
+	top: calc(50vh - 20px);
 	max-width: 630px;
     z-index: 2;
 	left: 50px;
@@ -17,10 +18,10 @@
 		top:auto;
 	}
 	@media screen and (min-width:640px) {
-		top: calc(50% - 100px );
+		top: calc(50vh - 100px );
 	}
 	@media screen and (min-width:1440px) {
-		top: calc(50% - 250px);
+		top: calc(50vh - 250px);
 	}
 	@media screen and (min-width:1024px) {
 		left: 130px;
@@ -34,17 +35,7 @@
 		color: $--white;
 		font-size: calc(6.94444vw + 6.66667px)
 	}
-	& a{
-		color: $--primary;
-		font-size: 16px;
-		display: flex;
-		gap: 10px;
-		align-items: center;
-		& svg{
-			max-width: 38px;
-			max-height: 38px;
-		}
-	}
+	
 }
 .hero__video{
 	max-width: 100%;
