@@ -8,7 +8,7 @@
 	}
 }
 .about__container{
-	& h1{
+	& h2{
 		@include titleH2;
 		line-height: 110%;
 		margin-bottom: 65px;

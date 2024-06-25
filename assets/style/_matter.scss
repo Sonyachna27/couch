@@ -1,0 +1,53 @@
+.matter__text-row{
+	@media screen and (max-width:767px) {
+		flex-direction: column;
+	}
+}
+.matter__text{
+	color: $--title-color;
+	max-width: 555px;
+	width: 45%;
+    margin-left: 68px;
+    font-weight: 300;
+    line-height: 1.41;
+    padding-right: 50px;
+	& h2{
+		font-size: 36px;
+    margin-bottom: 20px;
+    font-weight: 300;
+	}
+	@media screen and (max-width:767px) {
+		width: 100%;
+		max-width: 100%;
+		margin-left: 0;
+    padding-right: 0px;
+	}
+}
+.matter__image{
+	max-width: 700px;
+    width: 65%;
+    position: relative;
+    background-size: cover;
+    background-position: 50%;
+	@media screen and (max-width:767px) {
+		width: 100%;
+		max-width: 100%;
+	}
+	& img{
+		position: relative;
+		left: -10%;
+		max-width: 110%;
+		width: 120%;
+		vertical-align: middle;
+		@media screen and (max-width:767px) {
+			margin: 0 auto;
+			max-width: 100%;
+			width: 100%;
+			left: 0;
+		}
+	@media screen and (min-width:1200px) {
+		padding-right: -10px;
+		left: auto;
+	}
+	}
+}
