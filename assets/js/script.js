@@ -1,7 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-	const htmlElement = document.querySelector("html");
+	// для меню
 
+	const htmlElement = document.querySelector("html");
 	const burgerMenu = document.querySelector(".burgerBtn");
 	const headerNav = document.querySelector(".header__nav");
 	const navLinks = document.querySelectorAll("nav a");
@@ -16,6 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		});
 	});
 
+	//гарний скрол по сторінці
 	document.querySelectorAll('a[href^="#"').forEach(link => {
 
 		link.addEventListener('click', function(e) {
@@ -36,11 +38,10 @@ document.addEventListener("DOMContentLoaded", function () {
 		});
 	});
 	
+//слайдер на голвоній сторінці в секції Наша продукція,  потім повторюється по сторніках
 	const carouselSliderInit = document.querySelector('.carousel')
 	if(carouselSliderInit){
 		const carouselSlides = document.querySelectorAll(".carousel-slide");
-   
-
     if (carouselSlides.length > 1) {
         carouselSliderInit.classList.add('show-arrows');
     }
@@ -67,6 +68,8 @@ document.addEventListener("DOMContentLoaded", function () {
         },
     });
 	}
+
+	//слайдер  на головній сторінці велика картинка та текст Меблі в вашому житті
 	const owlSliderInit = document.querySelector('.owl-slider')
 	if(owlSliderInit){
 		const carouselSlider = new Swiper(".owl-slider", {
@@ -78,34 +81,39 @@ document.addEventListener("DOMContentLoaded", function () {
 		  });
 	}
 
-	const manufactureContainer = document.querySelectorAll(".manufacture__container");
+	//функція для розгортання тексту контенту та згортання назад
+	const manufactureContainer = document.querySelector("#manufacture");
 
 	if (manufactureContainer) {
-		const readMoreButton = document.getElementById("readMore");
-	
-		manufactureContainer.forEach(function(content) {
+		const createBtn = document.createElement('button');
+		createBtn.classList.add('manufacture-btn');
+		createBtn.innerText = 'Розгорнути текст'; 
+		manufactureContainer.appendChild(createBtn);
+
+		const manufactureContent = document.querySelectorAll('.manufacture__container');
+
+		createBtn.addEventListener("click", function(e) {
+			e.preventDefault();
+			manufactureContent.forEach(function(content) {
+				if (createBtn.innerText === 'Згорнути текст') {
+					content.style.height = "228px";
+					createBtn.innerText = 'Розгорнути текст';
+				} else {
+					content.style.height = "auto";
+					createBtn.innerText = 'Згорнути текст';
+				}
+			});
+		});
+
+		manufactureContent.forEach(function(content) {
 			if (content.offsetHeight >= 240) {
 				content.style.height = "228px";
 				content.style.overflow = 'hidden';
 			}
 		});
-	
-		if(readMoreButton){
-			readMoreButton.addEventListener("click", function(e) {
-				e.preventDefault();
-				manufactureContainer.forEach(function(content) {
-					if (readMoreButton.innerText === 'Згорнути текст') {
-						content.style.height = "228px";
-						readMoreButton.innerText = 'Розгорнути текст';
-					} else {
-						content.style.height = "auto";
-						readMoreButton.innerText = 'Згорнути текст';
-					}
-				});
-			});
-		}
 	}
-	
+
+	// слайдре секції  новини для переходу далі
 	const newsSliderInit = document.querySelector('.newsSlider')
 	if(newsSliderInit){
 		const newsSlider = new Swiper(".newsSlider", {
@@ -129,6 +137,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		  });
 	} 
     
+	//функція для селекту на сторінці з диванами
 	const select = document.querySelectorAll('.nice-select');
 	
 	select.forEach((sel)=>{
@@ -146,42 +155,42 @@ document.addEventListener("DOMContentLoaded", function () {
 		})
 	})
     
+	//функція для перемикання вигляду сторінки з гріда на рядок і назад
  
 		const showContentGridBtn = document.getElementById('view-tile');
 		const showContentColumnBtn = document.getElementById('view-list');
 		const productsWrap = document.querySelector('.products');
-
-	if(showContentColumnBtn && showContentGridBtn){
-		const setView = (view) => {
-			if (view === 'grid') {
-			  productsWrap.classList.remove('flex-marking');
-			  productsWrap.classList.add('grid-marking');
-			  showContentGridBtn.classList.add('view-btn-active');
-			  showContentColumnBtn.classList.remove('view-btn-active');
-			  localStorage.setItem('productsView', 'grid');
-			} else if (view === 'list') {
-			  productsWrap.classList.remove('grid-marking');
-			  productsWrap.classList.add('flex-marking');
-			  showContentColumnBtn.classList.add('view-btn-active');
-			  showContentGridBtn.classList.remove('view-btn-active');
-			  localStorage.setItem('productsView', 'list');
+		if(showContentColumnBtn && showContentGridBtn){
+			const setView = (view) => {
+				if (view === 'grid') {
+				productsWrap.classList.remove('flex-marking');
+				productsWrap.classList.add('grid-marking');
+				showContentGridBtn.classList.add('view-btn-active');
+				showContentColumnBtn.classList.remove('view-btn-active');
+				localStorage.setItem('productsView', 'grid');
+				} else if (view === 'list') {
+				productsWrap.classList.remove('grid-marking');
+				productsWrap.classList.add('flex-marking');
+				showContentColumnBtn.classList.add('view-btn-active');
+				showContentGridBtn.classList.remove('view-btn-active');
+				localStorage.setItem('productsView', 'list');
+				}
+			};	  
+			showContentGridBtn.addEventListener('click', () => {
+				setView('grid');
+			});	  
+			showContentColumnBtn.addEventListener('click', () => {
+				setView('list');
+			});	  
+			const savedView = localStorage.getItem('productsView');
+			if (savedView) {
+				setView(savedView);
+			} else {
+				setView('grid');
 			}
-		  };	  
-		  showContentGridBtn.addEventListener('click', () => {
-			setView('grid');
-		  });	  
-		  showContentColumnBtn.addEventListener('click', () => {
-			setView('list');
-		  });	  
-		  const savedView = localStorage.getItem('productsView');
-		  if (savedView) {
-			setView(savedView);
-		  } else {
-			setView('grid');
-		  }
-	}
+		}
 
-
+//слайд на сингл пейдж товару
 		const productSliderInit = document.querySelector('.productSlider')
 		if(productSliderInit){
 			const productSlides = document.querySelectorAll('.product-slide');
@@ -221,6 +230,8 @@ document.addEventListener("DOMContentLoaded", function () {
 			  });
 		} 
 		
+
+//функція для табів там де тех характеристики на сінгл продукту
 		const techPage = document.querySelector('.tech__container-tabs');
 		if (techPage) {
 			const techTabs = document.querySelectorAll('.tech__container-tabs-btn');
@@ -257,6 +268,8 @@ document.addEventListener("DOMContentLoaded", function () {
 			activeTechTabs();
 		}
 
+
+		//ще один слайдер на сторінці сінгл товару
 		const interSliderInit = document.querySelector('.interSlider')
 		if(interSliderInit){
 			const slides = document.querySelectorAll('.inter-slide');
@@ -296,6 +309,7 @@ document.addEventListener("DOMContentLoaded", function () {
 			  });
 		} 
 
+		//функція анімації блоків на сторінці сінгл там де Деталі
 		const detailsAnimInfo = document.querySelectorAll('.details__info-wrap');
 		if(detailsAnimInfo){
 			const interval = 3000; 
@@ -315,6 +329,7 @@ document.addEventListener("DOMContentLoaded", function () {
 			setInterval(detailsAnimateBlocks, interval);
 		}
 
+		//слайдер з секції Вас може зацікавити 
 		const intresSliderInit = document.querySelector('.intresSlider')
 		if(intresSliderInit){
 			const intresSlide = document.querySelectorAll(".intres-slide");
@@ -348,6 +363,8 @@ document.addEventListener("DOMContentLoaded", function () {
 				},
 			  });
 		} 
+		
+		//слайдер на сторінці виробництво
 		const stageSliderInit = document.querySelector('.stageSlider')
 		if(stageSliderInit){
 			
@@ -379,6 +396,8 @@ document.addEventListener("DOMContentLoaded", function () {
 				
 			  });
 		} 
+
+		//слайдер реалізовані проекти на сторінці дизайнерам
 		const realizeSliderInit = document.querySelector('.realizeSlider')
 		if(realizeSliderInit){
 			
