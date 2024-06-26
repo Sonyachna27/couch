@@ -247,7 +247,6 @@ document.addEventListener("DOMContentLoaded", function () {
 						showTechContent(contentDataName);
 					});
 	
-					// Set the first tab as active and show its content by default
 					if (index === 0) {
 						tab.classList.add('active-tab');
 						showTechContent(contentDataName);
@@ -292,9 +291,11 @@ document.addEventListener("DOMContentLoaded", function () {
 				},
 				pagination: {
 					el: ".inter-pagination",
+					clickable: true,
 				},
 			  });
 		} 
+
 		const detailsAnimInfo = document.querySelectorAll('.details__info-wrap');
 		if(detailsAnimInfo){
 			const interval = 3000; 
@@ -339,6 +340,7 @@ document.addEventListener("DOMContentLoaded", function () {
 				},
 				pagination: {
 					el: ".intres-pagination",
+					clickable: true,
 				},
 				navigation: {
 					nextEl: ".intres-button-next",
@@ -346,4 +348,36 @@ document.addEventListener("DOMContentLoaded", function () {
 				},
 			  });
 		} 
+		const stageSliderInit = document.querySelector('.stageSlider')
+		if(stageSliderInit){
+			
+			const stageSlider = new Swiper(".stageSlider", {
+				slidesPerView: 1,
+				spaceBetween: 5,
+				watchOverflow: true,
+				loop: true,
+				speed: 1000,
+				breakpoints: {
+					550: {
+					slidesPerView: 2,
+					spaceBetween: 5,
+					},
+					768: {
+					slidesPerView: 3,
+					spaceBetween: 5,
+					},
+					1024: {
+					slidesPerView: 4,
+					spaceBetween: 20,
+					},
+					
+				},
+				pagination: {
+					el: ".stage-pagination",
+					clickable: true,
+				},
+				
+			  });
+		} 
+
 });
