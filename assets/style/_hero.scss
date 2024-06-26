@@ -1,11 +1,7 @@
 .hero__container{
 	position: relative;
 	padding-top: 20px;
-	.heading &{
-		height: 70dvh;
-		padding: 60px 0 100px 0;
-		background: url(../images/about-heading.jpg) 100% 50% / cover no-repeat ;
-	}
+
 }
 .hero__content{
 	position: absolute;
@@ -13,10 +9,7 @@
 	max-width: 630px;
     z-index: 2;
 	left: 50px;
-	.heading &{
-		position: relative;
-		top:auto;
-	}
+
 	@media screen and (min-width:640px) {
 		top: calc(50vh - 100px );
 	}

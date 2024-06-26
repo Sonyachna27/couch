@@ -1,6 +1,7 @@
 .form__wrapper{
 	display: flex;
 	background-color: $--light-gray;
+	align-items: normal;
 	@media screen and (max-width:980px) {
 		flex-direction: column;
 		gap: 40px;
@@ -10,10 +11,12 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-
 	flex: 0 0 40%;
-	padding: 30px 60px;
+	padding: 20px 30px;
 	color: $--title-color;
+	@media screen and (min-width:1200px) {
+		padding: 30px 60px;
+	}
 	@media screen and (max-width:550px) {
 		padding: 20px 30px;
 	}
@@ -92,14 +95,11 @@
     box-sizing: border-box;
 }
 .form__img{
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	height: 100%;
+
 	& img{
+		max-height: 100%;
 		width: 100%;
-    	aspect-ratio: 1 / .6;
-		height: auto;
+		height: 100%;
 		object-fit: cover;
 		@media screen and (max-width:550px) {
 			aspect-ratio:  1 / 1;
