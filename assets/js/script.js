@@ -379,5 +379,28 @@ document.addEventListener("DOMContentLoaded", function () {
 				
 			  });
 		} 
+		const realizeSliderInit = document.querySelector('.realizeSlider')
+		if(realizeSliderInit){
+			
+			const stageSlider = new Swiper(".realizeSlider", {
+				slidesPerView: 1.5,
+				spaceBetween: 5,
+				watchOverflow: true,
+				speed: 1000,
+				breakpoints: {
+					768: {
+					slidesPerView: 2.5,
+					spaceBetween: 5,
+					},
+					1024: {
+					slidesPerView: 3.5,
+					spaceBetween: 20,
+					},					
+				},
+				
+			  });
+		} 
+
+
 
 });

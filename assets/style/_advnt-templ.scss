@@ -1,0 +1,51 @@
+.advant{
+	background-color: $--light-gray;
+padding: 60px 0;
+}
+.advant__container{
+	max-width: 1150px;
+	margin: 0 auto;
+	& h2{
+		font-size: 16px;
+		font-weight: 400;
+	}
+}
+ol.advant__items {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+	flex-wrap: wrap;
+	max-width: 840px;
+	counter-reset: custom-counter;
+	margin: 0 0 30px 38px;
+	@media screen and (max-width:767px) {
+		flex-direction: column;
+	}
+}
+
+li.advant__item {
+	width: 48%;
+	counter-increment: custom-counter;
+	position: relative;
+	color: $--title-color;
+@media screen and (max-width:767px) {
+	width: 100%;
+}
+	&::before {
+		content:"0" counter(custom-counter) ;
+		position: absolute;
+		top: 0;
+		left: 0;
+		font-weight: 300;
+		font-size: 24px;
+		color: $--primary;
+		line-height: 1.2;
+		left: -35px;
+	}
+	& h3{
+		font-size: 24px;
+		line-height: 1.2;
+		font-weight: 300;
+	}
+	
+}

@@ -968,6 +968,7 @@ h2 {
   height: 100%;
   left: 0;
   top: 0;
+  z-index: -1;
   background-size: 100%;
   background-repeat: no-repeat;
 }
@@ -1316,15 +1317,34 @@ section .container {
   margin-bottom: 20px;
 }
 
-.partners__images {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 60px;
+.partners-intro {
+  background-color: #f5f5f5;
+  padding: 65px 0 50px;
+  background-image: url(../images/parallax-item-1@2x.png);
+  background-position: left -637px top;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
 }
-@media screen and (max-width: 1023px) {
-  .partners__images {
-    grid-template-columns: repeat(2, 1fr);
-  }
+
+.partners-intro__container {
+  position: relative;
+  max-width: 80%;
+  margin: 0 auto;
+  z-index: 1;
+}
+.partners-intro__container h2 {
+  font-size: 16px;
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.partners__images {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 60px;
+  align-items: center;
+  justify-content: center;
 }
 @media screen and (max-width: 550px) {
   .partners__images {
@@ -1333,11 +1353,15 @@ section .container {
   }
 }
 .partners__images img {
-  max-width: 100%;
-  width: 100%;
+  flex: 1 1 27%;
+  width: calc(33.3333333333% - 60px);
   max-height: 60px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+  object-fit: contain;
+  margin: 0 auto;
 }
 
 .form__wrapper {
@@ -2725,4 +2749,177 @@ ul.introduce__list li {
 
 .stage-pagination .swiper-pagination-bullet {
   background-color: #373737;
+}
+
+.idea__row {
+  gap: 50px;
+  margin-bottom: 20px;
+}
+@media screen and (max-width: 767px) {
+  .idea__row {
+    flex-direction: column;
+  }
+}
+
+.idea__descr {
+  flex: 0 1 40%;
+}
+.idea__descr h2 {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.idea__img {
+  flex: 0 1 55%;
+}
+
+.idea__img {
+  display: flex;
+  gap: 10px;
+}
+.idea__img img {
+  max-width: 100%;
+  max-height: 100%;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media screen and (max-width: 550px) {
+  .idea__img img {
+    aspect-ratio: 1;
+    min-height: 320px;
+  }
+}
+@media screen and (max-width: 550px) {
+  .idea__img:has(.idea-img-column) {
+    flex-direction: column;
+  }
+}
+
+.idea-img-column {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.advant {
+  background-color: #f5f5f5;
+  padding: 60px 0;
+}
+
+.advant__container {
+  max-width: 1150px;
+  margin: 0 auto;
+}
+.advant__container h2 {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+ol.advant__items {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  max-width: 840px;
+  counter-reset: custom-counter;
+  margin: 0 0 30px 38px;
+}
+@media screen and (max-width: 767px) {
+  ol.advant__items {
+    flex-direction: column;
+  }
+}
+
+li.advant__item {
+  width: 48%;
+  counter-increment: custom-counter;
+  position: relative;
+  color: #767676;
+}
+@media screen and (max-width: 767px) {
+  li.advant__item {
+    width: 100%;
+  }
+}
+li.advant__item::before {
+  content: "0" counter(custom-counter);
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-weight: 300;
+  font-size: 24px;
+  color: #b79c7a;
+  line-height: 1.2;
+  left: -35px;
+}
+li.advant__item h3 {
+  font-size: 24px;
+  line-height: 1.2;
+  font-weight: 300;
+}
+
+.realize__container {
+  padding: 30px 0 30px 50px;
+  margin: 0 auto;
+}
+.realize__container h2 {
+  margin-bottom: 20px;
+  line-height: 96.5%;
+  font-size: 16px;
+  color: #767676;
+}
+
+.realize__link {
+  position: relative;
+  max-width: 490px;
+  min-width: calc(25% - 25px);
+  height: 415px;
+  background-position: 50%;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0 75px 25px 45px;
+  cursor: pointer;
+  overflow: hidden;
+}
+.realize__link:hover .realize__img {
+  transform: scale(1.1);
+}
+.realize__link:before {
+  display: block;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0.85), transparent);
+}
+.realize__link .arrow-after {
+  color: #b79c7a;
+  z-index: 1;
+}
+
+.realize__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: 0.3s ease-in-out;
+}
+
+.realize__title {
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 107%;
+  z-index: 1;
+  margin-bottom: 10px;
 }/*# sourceMappingURL=style.css.map */
