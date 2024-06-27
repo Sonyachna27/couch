@@ -197,7 +197,7 @@ h2 {
 	align-items: center;
 	justify-content: start;
 	gap: 5px;
-	flex-wrap: nowrap;
+	flex-wrap: wrap;
 	& a:nth-child(1){
 		text-transform: uppercase;
 
@@ -239,4 +239,68 @@ h2 {
     background-size: contain;
     background-position: 50%;
     margin-bottom: 23px;
+}
+.page-main{
+	display: flex;
+	gap: 20px;
+	@media screen and (max-width:1023px) {
+		flex-direction: column;
+	}
+}
+.main-content{
+	width: 60%;
+	margin: 0 auto;
+	@media screen and (max-width:1023px) {
+		width: 100%;
+		
+	}
+}
+.navBar{
+	width: 24px;
+	border: 1px solid hsla(0, 0%, 77.3%, .244);
+    padding: 40px 15px 40px 40px;
+    box-sizing: border-box;
+    max-width: 315px;
+	width: 100%;
+	margin-left: auto;
+	@media screen and (max-width:1023px) {
+		width: 100%;
+		margin: 40px 0;
+		
+	}
+}
+.nabBar-title{
+	font-size: 24px;
+    line-height: 1.2;
+	margin-bottom: 40px;
+}
+.related-article__content{
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 20px;
+	&:nth-last-of-type(1){
+		margin-bottom: 40px;
+	}
+}
+.related-name{
+	font-size: 14px;
+    line-height: 21px;
+    text-transform: lowercase;
+    color: $--primary;
+    font-weight: 300;
+}
+.related-link{
+	& h3{
+		font-weight: 300;
+		font-size: 16px;
+		line-height: 120%;
+		color: $--black;
+	}
+    margin-bottom: 5px;
+}
+.time{
+	color: #9a9a9a;
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: 300;
 }

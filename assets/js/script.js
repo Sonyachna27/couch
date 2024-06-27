@@ -398,10 +398,10 @@ document.addEventListener("DOMContentLoaded", function () {
 		} 
 
 		//слайдер реалізовані проекти на сторінці дизайнерам
-		const realizeSliderInit = document.querySelector('.realizeSlider')
+		const realizeSliderInit = document.querySelector('.realizeSlider');
 		if(realizeSliderInit){
 			
-			const stageSlider = new Swiper(".realizeSlider", {
+			const realizesSlider = new Swiper(".realizeSlider", {
 				slidesPerView: 1.5,
 				spaceBetween: 5,
 				watchOverflow: true,
@@ -419,7 +419,43 @@ document.addEventListener("DOMContentLoaded", function () {
 				
 			  });
 		} 
+		//слайдер шоуруми на сторінці контактів
+		const prevSliderInit = document.querySelector('.prevSlider');
+		if(prevSliderInit){
+			
+			const prevSlider = new Swiper(".prevSlider", {
+				slidesPerView: 1,
+				spaceBetween: 10,
+				watchOverflow: true,
+				speed: 1000,
+				breakpoints: {
+					768: {
+					slidesPerView: 2,
+					spaceBetween: 10,
+					},
+					1024: {
+					slidesPerView: 3,
+					spaceBetween: 10,
+					},					
+				},
+				
+			  });
+		} 
 
+		//слайдер для сторніки Новини вертикальний
+		const dataSliderInit = document.querySelector('.dataSlider');
+			if(dataSliderInit){
+				const dataSlider = new Swiper(".dataSlider", {
+					slidesPerView: 1,
+					spaceBetween: 10,
+					watchOverflow: true,
+					speed: 1000,
+					pagination: {
+						el: ".data-pagination",
+						clickable: true,
+					},
+					});
+			}
 
 
 });
