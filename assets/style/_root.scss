@@ -304,3 +304,9 @@ h2 {
     line-height: 21px;
     font-weight: 300;
 }
+.connect__container{
+	padding: 60px 0;
+	@media screen and (min-width:1200px) {
+		padding: 75px 0;
+	}
+}
