@@ -448,8 +448,12 @@ document.addEventListener("DOMContentLoaded", function () {
 				const dataSlider = new Swiper(".dataSlider", {
 					slidesPerView: 1,
 					spaceBetween: 10,
-					watchOverflow: true,
-					speed: 1000,
+					loop: true,
+					autoplay: {
+					delay: 0,
+					disableOnInteraction: false,
+					},
+					speed: 3000,
 					pagination: {
 						el: ".data-pagination",
 						clickable: true,

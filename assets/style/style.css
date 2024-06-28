@@ -727,6 +727,9 @@ h2 {
 .footer__menu li a {
   transition: color 0.4s ease-in-out;
 }
+.footer__menu li a:hover {
+  color: #b79c7a;
+}
 .footer__menu .sub-menu {
   display: flex;
   flex-direction: column;
@@ -744,6 +747,10 @@ h2 {
 .footer__menu .sub-menu li > a {
   color: #fff;
   font-size: 16px;
+  transition: color 0.4s ease-in-out;
+}
+.footer__menu .sub-menu li > a:hover {
+  color: #b79c7a;
 }
 .footer__menu li:not(.sub-menu li) {
   text-transform: uppercase;
@@ -823,19 +830,15 @@ h2 {
 
 .hero__content {
   position: absolute;
-  top: calc(50vh - 20px);
+  top: 0%;
+  transform: translate(0%, 50%);
   max-width: 630px;
   z-index: 2;
   left: 50px;
 }
-@media screen and (min-width: 640px) {
+@media screen and (max-width: 980px) {
   .hero__content {
-    top: calc(50vh - 100px);
-  }
-}
-@media screen and (min-width: 1440px) {
-  .hero__content {
-    top: calc(50vh - 250px);
+    transform: translate(0%, 100%);
   }
 }
 @media screen and (min-width: 1024px) {
@@ -859,15 +862,25 @@ h2 {
   max-width: 100%;
   width: 100%;
   align-self: start;
-  height: 70dvh;
+  height: 50dvh;
+}
+@media screen and (min-width: 1200px) {
+  .hero__video {
+    height: 70vh;
+  }
 }
 .hero__video video {
   max-width: 100%;
   width: 100%;
   display: block;
-  height: 70dvh;
+  height: 50dvh;
   -o-object-fit: cover;
      object-fit: cover;
+}
+@media screen and (min-width: 1200px) {
+  .hero__video video {
+    height: 70vh;
+  }
 }
 
 .about {
@@ -1021,6 +1034,7 @@ h2 {
   flex-direction: column;
   font-size: 16px;
   flex: 1 1 50%;
+  line-height: 1.2;
 }
 .intro__description ul .count {
   font-size: 40px;
@@ -1475,6 +1489,11 @@ section .container {
   line-height: 96%;
   font-weight: 300;
   margin-bottom: 30px;
+}
+@media screen and (max-width: 550px) {
+  .form__container h2 {
+    font-size: 24px;
+  }
 }
 .form__container form {
   max-width: 415px;
@@ -2213,6 +2232,7 @@ img.half-height {
   color: #767676;
   visibility: hidden;
   transform: scale(0.8);
+  transition: 0.2s ease-in-out;
 }
 .details__info-wrap img {
   max-width: 100px;
@@ -2400,7 +2420,7 @@ img.half-height {
 .heading__content {
   width: 90%;
   top: 0%;
-  transform: translate(0%, 50%);
+  transform: translate(0%, 100%);
   max-width: 768px;
   padding-right: 10px;
   z-index: 2;
@@ -2411,11 +2431,14 @@ img.half-height {
 @media screen and (min-width: 1024px) {
   .heading__content {
     left: 130px;
+    transform: translate(0%, 50%);
   }
 }
 @media screen and (max-width: 639px) {
   .heading__content {
     left: 25px;
+    transform: translate(0);
+    top: 50%;
   }
 }
 .heading__content h1 {
@@ -3522,6 +3545,8 @@ li.advant__item h3 {
 
 .contact_item {
   width: calc(50% - 10px);
+  display: flex;
+  flex-direction: column;
 }
 @media screen and (max-width: 767px) {
   .contact_item {

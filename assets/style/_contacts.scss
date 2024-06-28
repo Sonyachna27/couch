@@ -23,6 +23,8 @@
 }
 .contacts{
 	width: 46%;
+	
+
 	@media screen and (max-width:980px) {
 		width: 100%;
 	}
@@ -38,6 +40,8 @@
 }
 .contact_item{
 	width: calc(50% - 10px);
+	display: flex;
+	flex-direction: column;
 	@media screen and (max-width:767px) {
 		width: 100%;
 	}

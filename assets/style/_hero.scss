@@ -5,17 +5,16 @@
 }
 .hero__content{
 	position: absolute;
-	top: calc(50vh - 20px);
+	top: 0%;
+	transform: translate(0%, 50%);
 	max-width: 630px;
     z-index: 2;
 	left: 50px;
 
-	@media screen and (min-width:640px) {
-		top: calc(50vh - 100px );
+	@media screen and (max-width:980px) {
+		transform: translate(0%, 100%);
 	}
-	@media screen and (min-width:1440px) {
-		top: calc(50vh - 250px);
-	}
+	
 	@media screen and (min-width:1024px) {
 		left: 130px;
 	}
@@ -34,13 +33,19 @@
 	max-width: 100%;
 	width: 100%;
 	align-self: start;
-	height: 70dvh;
+	height: 50dvh;
+	@media screen and (min-width:1200px) {
+		height: 70vh;
+	}
 	& video{
 		max-width: 100%;
 		width: 100%;
 		display: block;
-		height: 70dvh;
+		height: 50dvh;
 		object-fit: cover;
+		@media screen and (min-width:1200px) {
+			height: 70vh;
+		}
 	}
 }
 

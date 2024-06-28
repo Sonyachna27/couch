@@ -20,6 +20,7 @@
 	color: $--title-color;
 	visibility: hidden;
 	transform: scale(.8);
+	transition: .2s ease-in-out;
 	& img{
 		max-width: 100px;
 		max-height: 100px;

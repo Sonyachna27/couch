@@ -25,6 +25,9 @@
     line-height: 96%;
     font-weight: 300;
     margin-bottom: 30px;
+	@media screen and (max-width:550px) {
+		font-size: 24px;
+	}
 	}
 	& form{
 		max-width: 415px;

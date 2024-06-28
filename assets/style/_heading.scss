@@ -24,7 +24,7 @@
 .heading__content{
 	width: 90%;
 	top: 0%;
-	transform: translate(0%, 50%);
+	transform: translate(0%, 100%);
 	max-width: 768px;
 	padding-right:10px ;
     z-index: 2;
@@ -33,9 +33,12 @@
 	padding: 10px;
 	@media screen and (min-width:1024px) {
 		left: 130px;
+		transform: translate(0%, 50%);
 	}
 	@media screen and (max-width:639px) {
 		left: 25px;
+		transform: translate(0);
+		top: 50%;
 	}
 	& h1{
 		font-weight: 300;
