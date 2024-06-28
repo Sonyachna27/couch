@@ -28,6 +28,7 @@
 	}
 	& form{
 		max-width: 415px;
+		width: 100%;
 		& input:invalid, 
 		& input:valid {
 			box-shadow: none;

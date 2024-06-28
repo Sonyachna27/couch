@@ -29,7 +29,8 @@ margin-bottom: 20px;
 			min-height: 320px;
 		}
 	}
-	&:has(.idea-img-column){
+	&:has(.idea-img-column),
+	&:has(.card){
 		@media screen and (max-width:550px) {
 		flex-direction: column;
 		}
@@ -42,4 +43,36 @@ margin-bottom: 20px;
 	@media screen and (max-width:550px) {
 		
 	}
+}
+.card{
+	position: relative;
+	max-width: 312px;
+	display: flex;
+	flex-direction: column;
+	
+}
+
+.card-count {
+	position: absolute;
+	font-size: 64px;
+	color: #e2e2e2;
+	left: 0;
+	top: 0;
+	transform: translateY(-40%);
+	counter-increment: list;
+	content: "0" counter(list);
+	font-weight: 300;
+}
+.card-img{
+	margin: 0 auto;
+	& img{
+		height: 240px;
+    -o-object-fit: contain;
+    object-fit: contain;
+    width: auto;
+	
+	}
+}
+.card-text{
+	text-align: center;
 }

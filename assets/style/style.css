@@ -397,6 +397,15 @@ h2 {
   font-weight: 300;
 }
 
+.connect__container {
+  padding: 60px 0;
+}
+@media screen and (min-width: 1200px) {
+  .connect__container {
+    padding: 75px 0;
+  }
+}
+
 .header {
   position: fixed;
   top: 0;
@@ -1469,6 +1478,7 @@ section .container {
 }
 .form__container form {
   max-width: 415px;
+  width: 100%;
 }
 .form__container form input:invalid, .form__container form input:valid {
   box-shadow: none;
@@ -2938,7 +2948,7 @@ ul.introduce__list li {
   }
 }
 @media screen and (max-width: 550px) {
-  .idea__img:has(.idea-img-column) {
+  .idea__img:has(.idea-img-column), .idea__img:has(.card) {
     flex-direction: column;
   }
 }
@@ -2948,6 +2958,39 @@ ul.introduce__list li {
   flex-direction: column;
   gap: 5px;
 }
+.card {
+  position: relative;
+  max-width: 312px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-count {
+  position: absolute;
+  font-size: 64px;
+  color: #e2e2e2;
+  left: 0;
+  top: 0;
+  transform: translateY(-40%);
+  counter-increment: list;
+  content: "0" counter(list);
+  font-weight: 300;
+}
+
+.card-img {
+  margin: 0 auto;
+}
+.card-img img {
+  height: 240px;
+  -o-object-fit: contain;
+  object-fit: contain;
+  width: auto;
+}
+
+.card-text {
+  text-align: center;
+}
+
 .advant {
   background-color: #f5f5f5;
   padding: 60px 0;
@@ -3557,4 +3600,72 @@ li.advant__item h3 {
 }
 .previous-slide h3 {
   text-transform: uppercase;
+}
+
+.dealers-gray {
+  background-color: #f5f5f5;
+  padding: 60px;
+}
+@media screen and (min-width: 1200px) {
+  .dealers-gray {
+    padding: 75px 0;
+  }
+}
+
+.profit__row {
+  gap: 40px;
+  margin-bottom: 40px;
+}
+@media screen and (max-width: 890px) {
+  .profit__row {
+    flex-direction: column;
+  }
+}
+
+.profit__list {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 10px;
+  justify-content: space-between;
+}
+.profit__list li {
+  width: calc(50% - 10px);
+  max-width: 410px;
+  display: flex;
+  gap: 10px;
+}
+@media screen and (max-width: 550px) {
+  .profit__list li {
+    width: 100%;
+  }
+}
+
+.number-item {
+  font-size: 24px;
+  color: #b79c7a;
+  line-height: 120%;
+  font-weight: 300;
+}
+
+.profit-descr h3 {
+  line-height: 120%;
+  margin-bottom: 8px;
+  font-size: 24px;
+  font-weight: 300;
+}
+
+.profit__img {
+  max-width: 400px;
+  width: 100%;
+}
+@media screen and (min-width: 1200px) {
+  .profit__img {
+    max-width: 500px;
+  }
+}
+.profit__img img {
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
 }/*# sourceMappingURL=style.css.map */
