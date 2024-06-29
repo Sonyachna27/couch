@@ -10,6 +10,9 @@
 	gap: 5px;
 	height: auto;
 	max-height: 445px;
+	@media screen and (min-width:1560px) {
+		max-height: 760px;
+	}
 	
 	& img{
 		max-width: 100%;
