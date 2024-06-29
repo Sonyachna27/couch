@@ -25,7 +25,10 @@
 		font-weight: 300;
 		line-height: 1;
 		color: $--white;
-		font-size: calc(6.94444vw + 6.66667px)
+		font-size: calc(6.94444vw + 6.66667px);
+		@media screen and (min-width:1560px) {
+			font-size: 72px;
+		}
 	}
 	
 }

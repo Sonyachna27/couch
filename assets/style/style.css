@@ -857,6 +857,11 @@ h2 {
   color: #fff;
   font-size: calc(6.94444vw + 6.66667px);
 }
+@media screen and (min-width: 1560px) {
+  .hero__content h1 {
+    font-size: 72px;
+  }
+}
 
 .hero__video {
   max-width: 100%;
@@ -2050,6 +2055,11 @@ section .container {
   height: auto;
   max-height: 445px;
 }
+@media screen and (min-width: 1560px) {
+  .product-slide {
+    max-height: 760px;
+  }
+}
 .product-slide img {
   max-width: 100%;
   width: 100%;
@@ -3097,6 +3107,11 @@ li.advant__item h3 {
   padding: 0 75px 25px 45px;
   cursor: pointer;
   overflow: hidden;
+}
+@media screen and (max-width: 767px) {
+  .realize__link {
+    padding: 0 28px 25px 28px;
+  }
 }
 .realize__link:hover .realize__img {
   transform: scale(1.1);
