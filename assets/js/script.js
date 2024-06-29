@@ -402,7 +402,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		if(realizeSliderInit){
 			
 			const realizesSlider = new Swiper(".realizeSlider", {
-				slidesPerView: 1.5,
+				slidesPerView: 1.2,
 				spaceBetween: 5,
 				watchOverflow: true,
 				speed: 1000,

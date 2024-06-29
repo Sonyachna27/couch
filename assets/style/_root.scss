@@ -19,9 +19,7 @@
   src: url(../fonts/OpenSans-Bold.ttf);
   font-weight: 700;
 }
-// *{
-// 	border: 1px solid red;
-// }
+
 
 $--primary: #b79c7a;
 $--beige-second:#a58359; 
@@ -39,6 +37,7 @@ body {
   line-height: 1.5;
   color: $--black;
   background: $--white;
+  --webkit-overflow-scrolling:touch;
  
 }
 
