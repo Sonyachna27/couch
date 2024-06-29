@@ -99,6 +99,7 @@ body {
   line-height: 1.5;
   color: #373737;
   background: #fff;
+  --webkit-overflow-scrolling:touch;
 }
 
 main {
@@ -3085,6 +3086,11 @@ li.advant__item h3 {
   padding: 30px 0 30px 50px;
   margin: 0 auto;
 }
+@media screen and (max-width: 757px) {
+  .realize__container {
+    padding: 30px 0;
+  }
+}
 .realize__container h2 {
   margin-bottom: 20px;
   line-height: 96.5%;
@@ -3111,6 +3117,11 @@ li.advant__item h3 {
 @media screen and (max-width: 767px) {
   .realize__link {
     padding: 0 28px 25px 28px;
+  }
+}
+@media screen and (max-width: 550px) {
+  .realize__link {
+    padding: 0 20px 25px 20px;
   }
 }
 .realize__link:hover .realize__img {
@@ -3149,6 +3160,11 @@ li.advant__item h3 {
   line-height: 107%;
   z-index: 1;
   margin-bottom: 10px;
+}
+@media screen and (max-width: 550px) {
+  .realize__title {
+    font-size: 18px;
+  }
 }
 
 .data__container h1 {
